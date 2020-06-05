@@ -1,0 +1,15 @@
+set(${PROJECT_NAME}_SOURCES
+    ${${PROJECT_NAME}_SOURCES}
+    ${CMAKE_CURRENT_SOURCE_DIR}/ichilnct.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/inchi_dll_a2.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/inchi_dll_a.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/inchi_dll_b.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/inchi_dll.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/inchi_dll_main.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixa/ixa_builder.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixa/ixa_inchikey_builder.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixa/ixa_mol.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixa/ixa_read_inchi.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixa/ixa_read_mol.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixa/ixa_status.c
+    PARENT_SCOPE)

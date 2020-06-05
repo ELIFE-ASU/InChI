@@ -1,0 +1,9 @@
+set(${PROJECT_NAME}_SOURCES
+    ${${PROJECT_NAME}_SOURCES}
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixaixa_builder.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixaixa_inchikey_builder.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixaixa_mol.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixaixa_read_inchi.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixaixa_read_mol.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/ixaixa_status.c
+    PARENT_SCOPE)
