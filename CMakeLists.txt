@@ -15,6 +15,8 @@ elseif (APPLE)
     add_definitions("-std=gnu1x -DTARGET_API_LIB")
     set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g")
 	set(CMAKE_MACOSX_RPATH ON)
+elseif (MSVC)
+    add_definitions("-std=gnu1x -DTARGET_API_LIB")
 endif()
 
 include_directories("include")
