@@ -10,6 +10,7 @@ message(STATUS "inchi version: ${${PROJECT_NAME}_VERSION}")
 
 if (UNIX AND NOT APPLE)
     add_definitions("-std=gnu1x -DTARGET_API_LIB")
+    add_compile_options("-fPIC")
     set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g -pg")
 elseif (APPLE)
     add_definitions("-std=gnu1x -DTARGET_API_LIB")
