@@ -23,11 +23,19 @@ endif()
 include_directories("include")
 add_subdirectory(src/inchi/api)
 add_subdirectory(src/inchi/base)
-add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_SOURCES})
+
+if (BUILD_DYNAMIC)
+    add_library(${PROJECT_NAME} SHARED ${${PROJECT_NAME}_SOURCES})
+endif()
+
 add_library(${PROJECT_NAME}_static ${${PROJECT_NAME}_SOURCES})
+
+if (BUILD_DYNAMIC)
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME} VERSION ${${PROJECT_NAME}_VERSION})
+endif()
+
 set_target_properties(${PROJECT_NAME}_static PROPERTIES VERSION ${${PROJECT_NAME}_VERSION})
-if (MSVC)
+if (MSVC) and (BUILD_DYNAMIC)
     set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "/DLIBRARY_EXPORTS")
 else()
     set_target_properties(${PROJECT_NAME}_static PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
@@ -37,6 +45,9 @@ if (UNIX)
     target_link_libraries(${PROJECT_NAME} m)
 endif()
 
-install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)
+if (BUILD_DYNAMIC)
+    install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME} DESTINATION lib)
+endif()
+
 install(TARGETS ${PROJECT_NAME}_static EXPORT ${PROJECT_NAME} DESTINATION lib)
 install(DIRECTORY include/ DESTINATION include)
