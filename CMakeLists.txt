@@ -35,7 +35,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME} VER
 endif()
 
 set_target_properties(${PROJECT_NAME}_static PROPERTIES VERSION ${${PROJECT_NAME}_VERSION})
-if (MSVC) and (BUILD_DYNAMIC)
+if (MSVC AND BUILD_DYNAMIC)
     set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "/DLIBRARY_EXPORTS")
 else()
     set_target_properties(${PROJECT_NAME}_static PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
