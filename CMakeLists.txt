@@ -31,7 +31,7 @@ endif()
 add_library(${PROJECT_NAME}_static ${${PROJECT_NAME}_SOURCES})
 
 if (BUILD_DYNAMIC)
-set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME} VERSION ${${PROJECT_NAME}_VERSION})
+    set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME} VERSION ${${PROJECT_NAME}_VERSION})
 endif()
 
 set_target_properties(${PROJECT_NAME}_static PROPERTIES VERSION ${${PROJECT_NAME}_VERSION})
@@ -41,7 +41,7 @@ else()
     set_target_properties(${PROJECT_NAME}_static PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
 endif()
 
-if (UNIX)
+if (UNIX AND BUILD_DYNAMIC)
     target_link_libraries(${PROJECT_NAME} m)
 endif()
 
