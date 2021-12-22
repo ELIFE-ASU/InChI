@@ -20,7 +20,7 @@ elseif (MSVC)
     add_definitions("-std=gnu1x -DTARGET_API_LIB")
 endif()
 
-include_directories("include")
+include_directories(include include/inchi/api include/inchi/base include/inchi/api/ixa)
 add_subdirectory(src/inchi/api)
 add_subdirectory(src/inchi/base)
 
