@@ -16,7 +16,7 @@ elseif (APPLE)
     add_definitions("-std=gnu1x -DTARGET_API_LIB")
     set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -g")
 	set(CMAKE_MACOSX_RPATH ON)
-else ()
+else () # Assuming Windows either MSVC or MinGW
     add_definitions("-std=gnu1x -DTARGET_API_LIB")
 endif()
 
