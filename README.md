@@ -31,7 +31,7 @@ This will generate a Makefile that you can use to build the api using
 
 `make` 
 
-If that works successfully you'll have an `inchi.a` and `inchi.so` file in your build directory. 
+If that works successfully you'll have an `inchi.a` file in your build directory. 
 
 ## Windows 
 Make a new directory inside the repo folder and navigate into it using:
@@ -46,5 +46,8 @@ Run cmake using the following command to point the source (`-S`) in the top leve
 
 This will generate the Visual Studio Solution Files you need too build the api. You can open the file `inchi.sln` using Visual Studio and build the solution  
 
-If that works successfully you'll have an `inchi.lib` and `inchi.dll` file in your build directory (probably under `Release/`, or `Debug/` if you didn't change to the build target to Release).
+If that works successfully you'll have an `inchi.lib` file in your build directory (probably under `Release/`, or `Debug/` if you didn't change to the build target to Release).
 
+## Shared Libraries
+
+If you run `cmake` with a flag `-DBUILD_DYNAMIC=YES` you will build both the shared and static libraries (`inchi.dll` for Windows, or `inchi.so` for Unix)

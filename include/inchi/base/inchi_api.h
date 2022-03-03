@@ -1422,7 +1422,7 @@ EXPIMP_TEMPLATE INCHI_API int INCHI_DECL
     v. 1.05:
     include IXA, "Extensible InChI API"
 */
-#include "inchi/base/ixa.h"
+#include "ixa.h"
 
 
 #endif    /* _INHCH_API_H_ */
